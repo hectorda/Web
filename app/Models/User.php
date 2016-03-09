@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name','rut','email', 'password',
+        'first_name', 'last_name','imagen','rut','email', 'password',
     ];
 
     /**
@@ -24,6 +24,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    /**
+     * Rules to validate for a new instance of model.
+     *
+     * @var array
+     */
     public static $rules =  [
         'first_name' => 'required|max:255',
         'last_name' => 'required|max:255',

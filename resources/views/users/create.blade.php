@@ -10,7 +10,7 @@
 					</div>			
 					<div class="panel-body">
 
-					   {!! Form::open(['route' => 'users.store','class'=>'form-horizontal']) !!}
+					   {!! Form::open(['route' => 'users.store','class'=>'form-horizontal','files'=>true]) !!}
 	                        @include('users.fields')
 						{!! Form::close() !!}
 								

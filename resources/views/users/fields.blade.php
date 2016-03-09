@@ -27,6 +27,21 @@
     </div>
 </div>
 
+<div class="form-group{{ $errors->has('imagen') ? ' has-error' : '' }}">
+    <label class="col-md-4 control-label">Imagen</label>
+
+    <div class="col-md-6">
+        {!! Form::file('imagen', null, ['class' => 'form-control']) !!}
+
+        @if ($errors->has('rut'))
+            <span class="help-block">
+                <strong>{{ $errors->first('imagen') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+
 <div class="form-group{{ $errors->has('rut') ? ' has-error' : '' }}">
     <label class="col-md-4 control-label">Rut</label>
 

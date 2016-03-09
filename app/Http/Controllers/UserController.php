@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Repositories\UserRepository as User;
 use App\Http\Requests;
-use Flash,Input;
+use Flash,Input,File;
 
 class UserController extends Controller
 {
@@ -52,6 +52,16 @@ class UserController extends Controller
     {
         $input=$request->all();
 
+        if (Input::hasfile('imagen')) {
+            $carpeta='images/';
+            if (!File::exists($carpeta))    //Crear carpeta de documentos adjuntos
+                File::makeDirectory($carpeta);
+            
+            $filename=Input::file('imagen')->getClientOriginalName();
+            Input::file('imagen')->move($carpeta, $filename);
+            $input['imagen']=$carpeta.$filename;
+        }
+
         $this->user->create($input);
 
         return redirect('users');
@@ -70,8 +80,9 @@ class UserController extends Controller
             Flash::warning('El Usuario no existe');
             return redirect('users');
         }
+        return view('users.show')
+            ->with('user',$user);
 
-        dd($user);
 
     }
 

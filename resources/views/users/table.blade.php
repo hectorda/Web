@@ -20,6 +20,7 @@
 				<td>{{$user->created_at}}</td>
 				<td>{{$user->password}}</td>
 			  <td>
+			  	<a href="{{ route('users.show', [$user->id]) }}"><i class="fa fa-eye"></i></a>
                 <a href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-edit"></i></a>
                 <a href="{{ route('users.delete', [$user->id]) }}" onclick="return confirm('Estas seguro que deseas eliminar este usuario?')"><i class="fa fa-trash"></i></a>
             </td>
