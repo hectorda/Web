@@ -34,4 +34,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
+    Route::resource('users','UserController');
+    Route::get('users/{id}/destroy',[
+    	'as'=>'users.delete',
+    	'uses'=>'UserController@destroy'
+    ]);
+
 });
