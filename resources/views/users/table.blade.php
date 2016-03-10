@@ -6,6 +6,7 @@
 			<th>Rut</th>
 			<th>Email</th>
 			<th>Creado</th>
+			<th>Imagen</th>
 			<th>Pass</th>
 			<th width="120px">Acciones</th>
 		</tr>
@@ -18,6 +19,7 @@
 				<td>{{$user->rut}}</td>
 				<td>{{$user->email}}</td>
 				<td>{{$user->created_at}}</td>
+				<td>{{$user->imagen}}</td>
 				<td>{{$user->password}}</td>
 			  <td>
 			  	<a href="{{ route('users.show', [$user->id]) }}"><i class="fa fa-eye"></i></a>
