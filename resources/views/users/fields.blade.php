@@ -31,7 +31,7 @@
     <label class="col-md-4 control-label">Imagen</label>
 
     <div class="col-md-6">
-        {!! Form::file('imagen', null, ['class' => 'form-control']) !!}
+        {!! Form::file('imagen', ['class' => 'form-control filestyle' , 'data-buttonText' => 'Elejir Archivo','data-buttonName'=>"btn-primary"]) !!}
 
         @if ($errors->has('rut'))
             <span class="help-block">
@@ -106,3 +106,7 @@
         </button>
     </div>
 </div>
+
+@push('scripts')
+    <script src="{{url('js/bootstrap-filestyle.min.js')}}"></script>
+@endpush
