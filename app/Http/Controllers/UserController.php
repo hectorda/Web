@@ -7,6 +7,7 @@ use App\Http\Requests\UserRequest;
 use App\Repositories\UserRepository as User;
 use App\Http\Requests;
 use Flash,Input,File;
+use Auth;
 
 class UserController extends Controller
 {
@@ -19,6 +20,7 @@ class UserController extends Controller
     public function __construct(User $user)
     {
         $this->user=$user;
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.

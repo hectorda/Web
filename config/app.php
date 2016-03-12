@@ -156,7 +156,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-
+        AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider::class,
     ],
 
     /*
@@ -206,6 +206,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
+        'SocialAuth'=> AdamWathan\EloquentOAuth\Facades\OAuth::class,
     ],
 
 ];

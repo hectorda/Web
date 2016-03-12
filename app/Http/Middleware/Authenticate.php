@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Flash;
 
 class Authenticate
 {
@@ -21,6 +22,7 @@ class Authenticate
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
+                Flash::error('Aun no ha iniciado sesión.');
                 return redirect()->guest('login');
             }
         }
