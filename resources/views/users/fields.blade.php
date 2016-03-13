@@ -31,7 +31,7 @@
     <label class="col-md-4 control-label">Imagen</label>
 
     <div class="col-md-6">
-        {!! Form::file('imagen', ['class' => 'form-control filestyle' , 'data-buttonText' => 'Elejir Archivo','data-buttonName'=>"btn-primary"]) !!}
+        {!! Form::file('imagen', ['class' => 'form-control filestyle' , 'data-buttonText' => 'Elegir Archivo','data-buttonName'=>"btn-primary"]) !!}
 
         @if ($errors->has('rut'))
             <span class="help-block">
